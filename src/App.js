@@ -1,23 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { createUseStyles } from 'react-jss'
+
+const useStyles = createUseStyles({
+	appHeader: {
+		textAlign: 'center',
+		minHeight: '100vh',
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+		justifyContent: 'center',
+	}
+})
 
 function App() {
+	const classes = useStyles()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div>
+      <header className={classes.appHeader}>
+				<h2>Experiments in React</h2>
+				<p>A personal playground for trying new things in React.js</p>
       </header>
     </div>
   );
